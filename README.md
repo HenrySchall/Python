@@ -1,4 +1,5 @@
 ## Introdução
+Guido Van Rossum criou o Python em 1989, enquanto trabalhava no Centrum Voor Wiskunde em Informatica no início dos anos 1980, e seu trabalho era implementar a linguagem de programação conhecida como ABC. Durante o final dos anos 1980, enquanto ainda estava na CWI, ele começou a procurar por uma linguagem script que tivesse sintaxe semelhante ao ABC, mas que tivesse acesso às chamadas de sistema do Amoeba. Após procurar e não encontrar nenhuma linguagem que atendesse às suas necessidades, Rossum decidiu projetar uma linguagem script simples que pudesse superar as inadequações do ABC. No final da década de 1980, Rossum começou a desenvolver seu script, e em 1991, lançou a versão de abertura da linguagem de programação. O nome da linguagem foi inspirado no programa de TV da BBC “Monty Python’s Flying Circus”, porque Guido Van Rossum era um grande fã do programa.
 
 ### Estatística
 A estatística é a ciência que objetiva coletar, organizar, analisar e interpretar dados. Ela é dividida em 3 partes: **Descritiva, Inferencial e Probabilística.**
