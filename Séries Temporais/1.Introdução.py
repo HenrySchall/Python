@@ -2,7 +2,7 @@
 from matplotlib.pylab import rcParams
 rcParams['figure.figsize'] = 15, 6
 
-# Série Anual 1980 a 2020
+# Série Anual
 np.random.seed(10)
 dt = np.random.normal(0,1,41)
 # 0 = média
@@ -41,3 +41,25 @@ e, p = stats.shapiro(serie1)
 print('Estatística de teste: {}'.format(e))
 print('p-valor: {}'.format(p))
 # não rejeita a hipótese nula, os valores são normalmente distribuídos (p-valor>0,05)
+
+# Série Mensal
+np.random.seed(6)
+dtm = np.random.normal(0,1,72)
+dtm
+
+# Montando a tabela
+dtm = pd.DataFrame(dtm)
+dtm
+
+# Renomeando coluna
+dtm.columns = ['valores']
+dtm.head()
+
+# Criando Série
+data = pd.date_range('2015-01', periods = len(dtm), freq = 'M')
+data
+
+serie2 = pd.Series(dtm['valores'].values, index = data)
+
+serie2.plot()
+plt.show()
