@@ -1,4 +1,4 @@
-# Introdução
+## Introdução
 
 ### Estatística
 A estatística é a ciência que objetiva coletar, organizar, analisar e interpretar dados. Ela é dividida em 3 partes: **Descritiva, Inferencial e Probabilística.**
