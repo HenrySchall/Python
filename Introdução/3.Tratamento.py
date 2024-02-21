@@ -46,3 +46,6 @@ petro.isnull().sum()
 
 # Exportar como CSV
 petro.to_csv('gol.csv')
+
+# apagando coluna
+dataset_df_normalizado.drop(labels=['Date'], axis=1, inplace=True)

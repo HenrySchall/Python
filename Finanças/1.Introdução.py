@@ -118,29 +118,35 @@ dataset['WEGE'], dataset['WEGE'].shift(2)
 ###############
 
 # Retorno Wege
-retorno_semanal_wege = (dataset['WEGE'] / dataset['WEGE'].shift(1)) - 1
-retorno_semanal_wege
+dataset['RS Wege'] = (dataset['WEGE'] / dataset['WEGE'].shift(1)) - 1
+dataset['RS Wege']
+dataset['RS Wege'].plot()
+plt.show()
 
 # Retorno Itaú
-retorno_semanal_itaú = (dataset['ITAÚ'] / dataset['ITAÚ'].shift(1)) - 1
-retorno_semanal_itaú
+dataset['RS Itau'] = (dataset['ITAU'] / dataset['ITAU'].shift(1)) - 1
+dataset['RS Itau']
+dataset['RS Itau'].plot()
+plt.show()
 
 # Retorno Vale
-retorno_semanal_vale = (dataset['VALE'] / dataset['VALE'].shift(1)) - 1
-retorno_semanal_vale
+dataset['RS Vale'] = (dataset['VALE'] / dataset['VALE'].shift(1)) - 1
+dataset['RS Vale']
+dataset['RS Vale'].plot()
+plt.show()
 
 #############
 ### Anual ###
 #############
 
 # Retorno Wege
-(retorno_semanal_wege.mean() * 246) * 100
+(dataset['RS Wege'].mean() * 246) * 100
 
 # Retorno Itaú
-(retorno_semanal_itaú.mean() * 246) * 100
+(dataset['RS Itau'].mean() * 246) * 100
 
 # Retorno Anual
-(retorno_semanal_vale.mean() * 246) * 100
+(dataset['RS Vale'].mean() * 246) * 100
 
 ###################################
 ### Taxa de Retorno Logaritmica ### 
@@ -148,20 +154,37 @@ retorno_semanal_vale
 
 # Usa-se para comparar a mesma ação em períodos diferentes
 
-# Retorno Logaritmica Vale
+# Retorno Logaritmico 
 np.log(dataset['VALE'][len(dataset) - 1] / dataset['VALE'][0]) * 100
 
-# Taxa de Retorno Logaritmica Semanal Vale
-retornolog_semanal_vale = np.log(dataset['VALE'] / dataset['VALE'].shift(1))
-retornolog_semanal_vale
+# Retorno Logaritmico Semanal 
+dataset['RL Vale'] = np.log(dataset['VALE'] / dataset['VALE'].shift(1))
 
-# Taxa de Retorno Anual
-(retornolog_semanal_vale.mean() * 246) * 100
+# Retorno Logaritmico Anual
+(dataset['RL Vale'].mean() * 246) * 100
 
+####################################
+### Retorno de carteira de ações ###
+####################################
 
+# Pegando os dados do dataframe normalizado
+dataset_df_normalizado
+dataset_df_normalizado.plot(xlabel = 'Date', figsize=(15, 7))
+plt.show()
 
+#apagar coluna
+#dataset_df_normalizado.drop(labels=['Date'], axis=1, inplace=True)
+#dataset_df_normalizado
 
+# Verificando Valores
+retorno_carteira = (dataset_df_normalizado / dataset_df_normalizado.shift(1)) - 1
+retorno_carteira.head()
 
+# Retorno anual de cada ativo (%)
+retorno_anual = (retorno_carteira.mean() * 246 ) * 100
+retorno_anual
+
+#
 
 
 
