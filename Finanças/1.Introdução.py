@@ -1,4 +1,4 @@
-# Instalar Bibliotecas
+# Instalar Bibliotecas (rodar no Poweshell do Visual Studio)
 # pip install yfinance numpy matplotlib plotly-express pandas seaborn radian
 
 # Importando bases
